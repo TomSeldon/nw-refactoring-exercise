@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "strict": true,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "outDir": "test-dist",
+        "target": "es6",
+        "sourceMap": true,
+        "lib": ["es2016.array.include", "es2015"]
+    },
+    "include": ["globals.d.ts", "test/**/*.spec.ts"]
+}

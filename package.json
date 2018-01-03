@@ -1,0 +1,28 @@
+{
+    "name": "refactoring-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "npm run unit-tests",
+        "preunit-tests": "tsc --project tsconfig-unit-tests.json",
+        "unit-tests": "mocha test-dist/**/*.spec.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "private": true,
+    "dependencies": {
+        "mongodb": "^3.0.1"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.0.10",
+        "@types/mocha": "^2.2.45",
+        "@types/mongodb": "^2.2.18",
+        "chai": "^4.1.2",
+        "mocha": "^4.1.0",
+        "typescript": "^2.6.2"
+    }
+}
