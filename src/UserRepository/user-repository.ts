@@ -10,7 +10,7 @@ export class UserRepository {
     private readonly CONNECTION_STRING: string = 'mongodb://localhost:27017/myproject';
     private readonly DATABASE_NAME: string = 'myproject';
 
-    async findUserById(userId: string): Promise<User> {
+    async getUser(userId: string): Promise<User> {
         // Check current user is allowed to do this
         if (!session.roles.includes('get_user')) {
             throw new Error('Insufficient privileges to perform this action');
