@@ -24,8 +24,6 @@ export class UserRepository {
             _id: new mongodb.ObjectID(userId)
         });
 
-        client.close();
-
         // Log access to an audit log
         const auditLogEntry: AuditLogEntry = {
             resource: `users/${userId}`,
@@ -35,6 +33,8 @@ export class UserRepository {
         };
 
         await database.collection('audit').insertOne(auditLogEntry);
+
+        client.close();
 
         // Return the user to the caller
         return user;
