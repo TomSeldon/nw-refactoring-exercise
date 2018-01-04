@@ -1,5 +1,5 @@
 // Assume current user session is available at the global variable: `session`.
-// This contains the `userId` string of the current user, and a `roles` property which is an array of string based roles.
+// This contains the `userId` string of the current user, and a `permissions` property which is an array of string based permissions.
 
 import * as mongodb from 'mongodb';
 
@@ -12,7 +12,7 @@ export class UserRepository {
 
     async getUser(userId: string): Promise<User> {
         // Check current user is allowed to do this
-        if (!session.roles.includes('get_user')) {
+        if (!session.permissions.includes('get_user')) {
             throw new Error('Insufficient privileges to perform this action');
         }
 

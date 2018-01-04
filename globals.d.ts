@@ -1,6 +1,6 @@
 interface Session {
     userId: string;
-    roles: string[];
+    permissions: string[];
 }
 
 declare const session: Session;
